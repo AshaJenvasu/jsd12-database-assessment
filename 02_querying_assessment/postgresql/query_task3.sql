@@ -18,5 +18,10 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
+-- Your thinking: SELECT staff table to get firstname and lastname then finding howmany orders that staff proceed. I use orders table to count the order_id so I decide to join it together. I need to use COUNT to know how many orders because of that I also need to use GROUP BY to beable to show the result. Lastly use ORDER BY to show who commit the highest.
 --
+SELECT staff.first_name, staff.last_name, COUNT(orders.order_id)
+FROM STAFF 
+JOIN orders ON staff.staff_id = orders.staff_id
+GROUP BY staff.first_name, staff.last_name
+ORDER BY COUNT(orders.order_id) DESC;
