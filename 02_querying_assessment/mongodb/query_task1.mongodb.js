@@ -16,5 +16,15 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: first connecting to the database then use .find to find the price field buy using $lt to sort the price below 10. Then make another {} as a projection to show name price but not id. Lastly sort the price as asc order to easy for the owner to check.
 //
+use("chrome-burger-db");
+
+db.menu_items
+  .find(
+    {
+      price: { $lt: 10 },
+    },
+    { name: 1, price: 1, _id: 0 },
+  )
+  .sort({ price: 1 });
