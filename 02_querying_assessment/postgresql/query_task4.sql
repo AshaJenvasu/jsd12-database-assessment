@@ -16,5 +16,10 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
+-- Your thinking: SELECT the suppliers table see the all the name then use WHERE to sort only 'Freshest Farm Produce'. After that Join with ingredients and show the name column.
 --
+
+SELECT suppliers.name, ingredients.name
+FROM suppliers
+JOIN ingredients ON suppliers.supplier_id = ingredients.supplier_id
+WHERE suppliers.name = 'Freshest Farm Produce'
