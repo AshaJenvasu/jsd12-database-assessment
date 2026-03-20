@@ -19,6 +19,6 @@
 -- Your thinking: First I open the data base Schema to see overall of the database. Then I use select all from table 'menuitems' to see how the table look like. Then I use SELECT column of category and price in menu table and use 'WHERE' to select only row 'Side'.
 --
 
-SELECT menuitems.category, menuitems.price
+SELECT menuitems.category, menuitems.price, menuitems.name
 FROM menuitems
 WHERE menuitems.category = 'Side';

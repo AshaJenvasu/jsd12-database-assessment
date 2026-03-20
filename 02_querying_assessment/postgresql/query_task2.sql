@@ -16,5 +16,9 @@
 -- involved, and what SQL concepts you plan to use.
 -- Write in English or Thai. Do not skip this step.
 --
--- Your thinking:
+-- Your thinking: Finding table where there is first name and lastname at first I found 'Person' table and try to join with another table that have 'role' column. But I found that staff have everything firstname lastname and role, so I change my plan to use only one table then SELECT 'staff.first_name, staff.last_name, staff.role' then use where to find the role 'Cook'
 --
+
+SELECT staff.first_name, staff.last_name, staff.role
+FROM staff
+WHERE staff.role = 'Cook';
