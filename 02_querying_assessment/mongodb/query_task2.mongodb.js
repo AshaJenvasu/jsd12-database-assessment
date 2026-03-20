@@ -17,5 +17,18 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: find staff name Jane Doe first then just projection to show only date and total price as the question ask so I make _id: 0 .
 //
+use("chrome-burger-db");
+
+db.orders.find(
+  {
+    "staff.first_name": "Jane",
+    "staff.last_name": "Doe",
+  },
+  {
+    order_date: 1,
+    total_price: 1,
+    _id: 0,
+  },
+);
