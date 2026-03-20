@@ -17,5 +17,21 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: I try to use find but it's not effective for this task so I change to use aggregate instead. In the stage one I use $group to group everything together so _id:0 then make a new field as total_revenue to find a sum of total_price. Then second stage use $project to sort out the _id only show total_revenue.
 //
+
+use("chrome-burger-db");
+
+db.orders.aggregate([
+  {
+    $group: {
+      _id: 0,
+      total_revenue: { $sum: "$total_price" },
+    },
+  },
+  {
+    $project: {
+      _id: 0,
+    },
+  },
+]);
