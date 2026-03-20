@@ -16,5 +16,11 @@
 // are involved, and what MongoDB concepts you plan to use.
 // Write in English or Thai. Do not skip this step.
 //
-// Your thinking:
+// Your thinking: use the collection ingredients to find stock_level, then use $gte to find stock level that are equal or more than 100.
 //
+
+use("chrome-burger-db");
+
+db.ingredients.find({
+  stock_level: { $gte: 100 },
+});
